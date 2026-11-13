@@ -1087,6 +1087,18 @@ body.landing #header nav a {
     margin-bottom: 1.75em;
 }
 
+/* Text links on the dark banner background: the global link color
+   (#383b43) is nearly invisible here, so use a light cyan instead. */
+#banner p a {
+    color: #80E0FF;
+    border-bottom-color: rgba(128, 224, 255, 0.6);
+}
+
+#banner p a:hover,
+#banner p a:active {
+    color: #ffffff;
+}
+
 /* Wrapper */
 
 .wrapper {
