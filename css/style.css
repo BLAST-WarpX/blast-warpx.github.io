@@ -1059,6 +1059,20 @@ body.landing #header nav a {
     right: 0;
 }
 
+/* Full-height layout: the banner (and with it the zoom of its "cover"
+   background image) grows to fill the viewport, while the footer keeps
+   its natural height. Without this, viewports taller than the content
+   show the plain body background below the footer.
+   skel-layers wraps the page content in #skel-layers-wrapper; without
+   JavaScript (noscript), banner and footer are direct children of body. */
+
+body.landing,
+body.landing #skel-layers-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 /* Banner */
 
 #banner {
@@ -1068,6 +1082,11 @@ body.landing #header nav a {
     color: #ffffff;
     padding: 20em 0em 20em;
     text-align: center;
+    /* fill the remaining height and center the content vertically */
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #banner :last-child {
@@ -1179,7 +1198,8 @@ body.landing #header nav a {
 
 #footer {
     background: #383b43;
-    padding: 3em 0em 4em;
+    flex-shrink: 0;
+    padding: 2em 0em 2em;
 }
 
 #footer h2, #footer h3, #footer h4 {
@@ -1204,7 +1224,7 @@ body.landing #header nav a {
 }
 
 #footer .copyright {
-    margin-top: 0.65em;
+    margin: 0;
     padding: 0;
 }
 
